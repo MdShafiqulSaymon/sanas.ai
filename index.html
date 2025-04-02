@@ -1,195 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanas - Sounds like Magic</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
-        body, html {
-            height: 100%;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        .nav-link {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #888;
-        }
-
-        .nav-link svg {
-            width: 12px;
-            height: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-link:hover svg {
-            transform: translateX(4px);
-        }
-
-        .header-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Play Demo Button Styles */
-        .play-demo-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #fff; /* Light green background */
-            color: black;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            gap: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .play-demo-btn:hover {
-            background-color: #c0e6c9;
-        }
-
-        .play-demo-btn img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        @media (max-width: 1024px) {
-            .nav-wrapper {
-                width: 90%;
-            }
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
     </style>
-</head>
-<body class="font-inter relative">
-    <div class="header-container relative">
-        <!-- Video Background -->
-        <video 
-            src="https://effortless-badge-32d479bc16.media.strapiapp.com/Sanas_Graphic_Header_L_Res_2ff73074d5.mp4#t=0.1" 
-            class="video-background" 
-            autoplay 
-            loop 
-            muted 
-            playsinline
-        ></video>
+  </head>
+  <body class="font-inter relative min-h-screen">
+    <div class="relative h-screen">
+      <!-- Video Background -->
+      <video
+        src="https://effortless-badge-32d479bc16.media.strapiapp.com/Sanas_Graphic_Header_L_Res_2ff73074d5.mp4#t=0.1"
+        class="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity-50"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
 
-        <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-50">
-            <div class="mx-auto px-4 py-4">
-                <div class="nav-wrapper bg-black text-white rounded-full flex items-center justify-between px-4 py-3 w-1/2 mx-auto">
-                    <div class="flex items-center space-x-6 py-4 ">
-                        <a href="/" class="flex items-center">
-                            <svg width="24" height="24" viewBox="0 0 202 192" class="mr-2">
-                                <path d="m201.945 0v96h-100.972c0-53.0134 45.213-96 100.972-96zm-201.945 192c55.7594 0 100.973-42.987 100.973-96h-100.973z" fill="white"></path>
-                            </svg>
-                            <span class="font-bold">sanas</span>
-                        </a>
-                        
-                        <div class="hidden lg:flex space-x-6">
-                            <button class="nav-link text-white">
-                                Products
-                                <svg viewBox="0 0 12 12">
-                                    <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
-                                </svg>
-                            </button>
-                            <button class="nav-link text-white">
-                                Solution
-                                <svg viewBox="0 0 12 12">
-                                    <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
-                                </svg>
-                            </button>
-                            <button class="nav-link text-white">
-                                Customer
-                                <svg viewBox="0 0 12 12">
-                                    <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
-                                </svg>
-                            </button>
-                            <button class="nav-link text-white">
-                                Resource
-                                <svg viewBox="0 0 12 12">
-                                    <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
-                                </svg>
-                            </button>
-                            <button class="nav-link text-white">
-                                Company
-                                <svg viewBox="0 0 12 12">
-                                    <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
-                                </svg>
-                            </button>
-                            <!-- Other nav buttons remain the same -->
+      <!-- Navigation -->
+      <nav class="fixed top-0 left-0 right-0 z-50">
+        <div class="mx-auto px-4 py-4">
+          <div
+            class="bg-black text-white rounded-full flex items-center justify-between px-4 py-3 w-1/2 mx-auto relative group"
+          >
+            <div class="flex items-center space-x-6">
+              <a href="/" class="flex items-center">
+                <svg width="24" height="24" viewBox="0 0 202 192" class="mr-2">
+                  <path
+                    d="m201.945 0v96h-100.972c0-53.0134 45.213-96 100.972-96zm-201.945 192c55.7594 0 100.973-42.987 100.973-96h-100.973z"
+                    fill="white"
+                  ></path>
+                </svg>
+                <span class="font-bold">sanas</span>
+              </a>
+
+              <!-- Inside the navigation section, replace the existing navigation div -->
+              <div class="hidden lg:flex space-x-6 relative w-full">
+                <!-- Products Dropdown -->
+                <div class="relative group/products w-full">
+                    <button class="flex items-center space-x-2 hover:text-gray-300">
+                        Products
+                        <svg class="w-3 h-3" viewBox="0 0 12 12">
+                            <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                        </svg>
+                    </button>
+            
+                    <div class="absolute hidden group-hover/products:block top-full left-1/2 transform -translate-x-1/2 w-screen max-w-6xl mx-auto mt-4 bg-black rounded-2xl p-8 shadow-lg z-50">
+                        <div class="flex">
+                            <div class="w-1/2 pr-8">
+                                <h3 class="text-gray-400 font-bold mb-4">Our Products</h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Accent Translation
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Noise Cancellation
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-1/2 pl-8 border-l border-gray-800">
+                                <h3 class="text-gray-400 font-bold mb-4">Description</h3>
+                                <p class="text-white">
+                                    Break communication barriers with real-time Accent Translation
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div>
-                        <a href="#" class="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-100">Book Demo</a>
-                    </div>
-
-                    <!-- Mobile Menu Toggle -->
-                    <div class="lg:hidden">
-                        <button class="text-white focus:outline-none">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <div class="flex items-center justify-center flex-grow">
-            <div class="text-center px-4 sm:px-6 lg:px-8">
-                <h1 class="text-9xl lg:text-9xl text-black mb-4">Sounds like Magic</h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                    Experience the world's first real-time speech understanding platform with Accent Translation and Noise Cancellation.
-                </p>
-                
-                <!-- Play Demo Button -->
-                <div class="flex justify-center">
-                    <button class="play-demo-btn">
-                        <img 
-                            src="https://effortless-badge-32d479bc16.media.strapiapp.com/Nukholu_india_9241427496.webp" 
-                            alt="Play Demo"
-                        />
-                        Play Demo
+            
+                <!-- Solutions Dropdown -->
+                <div class="relative group/solutions w-full">
+                    <button class="flex items-center space-x-2 hover:text-gray-300">
+                        Solutions
+                        <svg class="w-3 h-3" viewBox="0 0 12 12">
+                            <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                        </svg>
                     </button>
+            
+                    <div class="absolute hidden group-hover/solutions:block top-full left-1/2 transform -translate-x-1/2 w-screen max-w-6xl mx-auto mt-4 bg-black rounded-2xl p-8 shadow-lg z-50">
+                        <div class="flex">
+                            <div class="w-1/2 pr-8">
+                                <h3 class="text-gray-400 font-bold mb-4">Who We Serve</h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Contact Centers
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Enterprises
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-1/2 pl-8 border-l border-gray-800">
+                                <h3 class="text-gray-400 font-bold mb-4">Description</h3>
+                                <p class="text-white">
+                                    Hire talent, not accent. Enable new levels of cost performance while improving CSAT.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Customers Dropdown -->
+                <div class="relative group/customers w-full">
+                    <button class="flex items-center space-x-2 hover:text-gray-300">
+                        Customers
+                        <svg class="w-3 h-3" viewBox="0 0 12 12">
+                            <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                        </svg>
+                    </button>
+            
+                    <div class="absolute hidden group-hover/customers:block top-full left-1/2 transform -translate-x-1/2 w-screen max-w-6xl mx-auto mt-4 bg-black rounded-2xl p-8 shadow-lg z-50">
+                        <div class="flex">
+                            <div class="w-1/2 pr-8">
+                                <h3 class="text-gray-400 font-bold mb-4">Customer Stories</h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Customer Stories
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Agent Stories
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-1/2 pl-8 border-l border-gray-800">
+                                <h3 class="text-gray-400 font-bold mb-4">Description</h3>
+                                <p class="text-white">
+                                    Discover how Sanas is driving business growth and changing lives.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Resources Dropdown -->
+                <div class="relative group/resources w-full">
+                    <button class="flex items-center space-x-2 hover:text-gray-300">
+                        Resources
+                        <svg class="w-3 h-3" viewBox="0 0 12 12">
+                            <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                        </svg>
+                    </button>
+            
+                    <div class="absolute hidden group-hover/resources:block top-full left-1/2 transform -translate-x-1/2 w-screen max-w-6xl mx-auto mt-4 bg-black rounded-2xl p-8 shadow-lg z-50">
+                        <div class="flex">
+                            <div class="w-1/2 pr-8">
+                                <h3 class="text-gray-400 font-bold mb-4">Resource Center</h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Blog
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            News
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-1/2 pl-8 border-l border-gray-800">
+                                <h3 class="text-gray-400 font-bold mb-4">Description</h3>
+                                <p class="text-white">
+                                    Explore the latest insights, product launches, and thought leadership.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Company Dropdown -->
+                <div class="relative group/company w-full">
+                    <button class="flex items-center space-x-2 hover:text-gray-300">
+                        Company
+                        <svg class="w-3 h-3" viewBox="0 0 12 12">
+                            <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                        </svg>
+                    </button>
+            
+                    <div class="absolute hidden group-hover/company:block top-full left-1/2 transform -translate-x-1/2 w-screen max-w-6xl mx-auto mt-4 bg-black rounded-2xl p-8 shadow-lg z-50">
+                        <div class="flex">
+                            <div class="w-1/2 pr-8">
+                                <h3 class="text-gray-400 font-bold mb-4">About Sanas</h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            About Us
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex justify-between items-center text-white hover:text-green-400">
+                                            Careers
+                                            <svg class="w-3 h-3" viewBox="0 0 12 12">
+                                                <path d="M8.7835 5.3335L5.05016 1.60016L6.00016 0.666829L11.3335 6.00016L6.00016 11.3335L5.05016 10.4002L8.7835 6.66683L0.666829 6.66683L0.666829 5.33349L8.7835 5.3335Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-1/2 pl-8 border-l border-gray-800">
+                                <h3 class="text-gray-400 font-bold mb-4">Description</h3>
+                                <p class="text-white">
+                                    Breaking barriers one conversation at a time. Join us in transforming communication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                class="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-100"
+                >Book Demo</a
+              >
+            </div>
+
+            <div class="lg:hidden">
+              <button class="text-white focus:outline-none">
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+      </nav>
+
+      <div class="flex items-center justify-center h-full">
+        <div class="text-center px-4 sm:px-6 lg:px-8">
+          <h1 class="text-9xl text-black mb-4">Sounds like Magic</h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+            Experience the world's first real-time speech understanding platform
+            with Accent Translation and Noise Cancellation.
+          </p>
+
+          <div class="flex justify-center">
+            <button
+              class="bg-white hover:bg-green-100 flex items-center space-x-2 px-4 py-2 rounded-full"
+            >
+              <img
+                src="https://effortless-badge-32d479bc16.media.strapiapp.com/Nukholu_india_9241427496.webp"
+                alt="Play Demo"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <span>Play Demo</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
